@@ -49,10 +49,25 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rubocop", "~> 1.75"
+
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+
+  gem "bullet", "~> 8.0"
+
+  gem "sorbet", "~> 0.5.12119"
+  gem "reek", "~> 6.5"
+  gem "fasterer", "~> 0.11.0"
+  gem "bundle-audit", "~> 0.1.0"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "amazing_print", "~> 1.6"
+  gem "listen", "~> 3.3"
+  gem "overcommit", "~> 0.67.1"
   gem "web-console"
 end
 
@@ -61,3 +76,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "httparty", "~> 0.23.1"

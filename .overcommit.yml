@@ -50,6 +50,6 @@ PrePush:
     enabled: true
     on_fail: warn
 
-  CustomScript:
+  RunTests:
     enabled: true
     command: ['bin/rails', 'test']

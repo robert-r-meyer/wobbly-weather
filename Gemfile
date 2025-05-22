@@ -55,6 +55,9 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
 
+  # VCR For recording HTTP interactions
+  gem "vcr", "~> 6.3"
+
   gem "bullet", "~> 8.0"
 
   gem "sorbet", "~> 0.5.12119"

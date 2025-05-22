@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Weather Forecast</h3>
+                </div>
+                <div class="card-body">
+                    <% if @forecast.present? %>
+                        <h5 class="card-title"><%= @forecast[:location] %></h5>
+                        <p class="card-text">
+                            <strong>Temperature:</strong> <%= @forecast[:temperature] %>°C<br>
+                            <strong>Condition:</strong> <%= @forecast[:condition] %><br>
+                            <strong>Humidity:</strong> <%= @forecast[:humidity] %>%
+                        </p>
+                    <% else %>
+                        <p class="text-muted">No forecast data available. Please search for a location.</p>
+                    <% end %>
+                    <%= form_with url: weather_path, method: :get, local: true, class: "mt-4" do |form| %>
+                        <div class="input-group">
+                            <%= form.text_field :location, placeholder: "Enter location", class: "form-control" %>
+                            <button class="btn btn-primary" type="submit">Get Forecast</button>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

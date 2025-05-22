@@ -1,29 +1,62 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">Weather Forecast</h3>
-                </div>
-                <div class="card-body">
-                    <% if @forecast.present? %>
-                        <h5 class="card-title"><%= @forecast[:location] %></h5>
-                        <p class="card-text">
-                            <strong>Temperature:</strong> <%= @forecast[:temperature] %>°C<br>
-                            <strong>Condition:</strong> <%= @forecast[:condition] %><br>
-                            <strong>Humidity:</strong> <%= @forecast[:humidity] %>%
-                        </p>
-                    <% else %>
-                        <p class="text-muted">No forecast data available. Please search for a location.</p>
-                    <% end %>
-                    <%= form_with url: weather_path, method: :get, local: true, class: "mt-4" do |form| %>
-                        <div class="input-group">
-                            <%= form.text_field :location, placeholder: "Enter location", class: "form-control" %>
-                            <button class="btn btn-primary" type="submit">Get Forecast</button>
-                        </div>
-                    <% end %>
-                </div>
-            </div>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+          <%# Yep, I used AI to find the char for the weather Icon %>
+          <h2 class="mb-1">🌤️ Weather Forecast</h2>
+            <small class="d-block mt-2">Location fetched from cache: <strong><%= @cached_location %></strong></small>
         </div>
+        <div class="card-body">
+          <% if @forecast.present? %>
+            <div class="mb-4 text-center">
+              <h4 class="card-title mb-2"><%= @forecast["name"] %></h4>
+              <span class="display-4 fw-bold text-primary">
+                <%= @forecast["main"]["temp"] %>°C
+              </span>
+              <div class="text-muted mb-2">
+                <%= @forecast["weather"].first["description"].capitalize if @forecast["weather"] %>
+              </div>
+            </div>
+            <div class="row text-center mb-4">
+              <div class="col-6 col-sm-3 mb-2">
+                <div class="border rounded py-2 bg-light">
+                  <div class="fw-semibold">High</div>
+                  <div><%= @forecast["main"]["temp_max"] %>°C</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3 mb-2">
+                <div class="border rounded py-2 bg-light">
+                  <div class="fw-semibold">Low</div>
+                  <div><%= @forecast["main"]["temp_min"] %>°C</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3 mb-2">
+                <div class="border rounded py-2 bg-light">
+                  <div class="fw-semibold">Humidity</div>
+                  <div><%= @forecast["main"]["humidity"] %>%</div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3 mb-2">
+                <div class="border rounded py-2 bg-light">
+                  <div class="fw-semibold">Feels Like</div>
+                  <div><%= @forecast["main"]["feels_like"] %>°C</div>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="alert alert-info text-center mb-4">
+              No forecast data available. Please search for a location.
+            </div>
+          <% end %>
+          <%= form_with url: weather_path, method: :get, local: true, class: "mt-3" do |form| %>
+            <div class="input-group">
+              <%= form.text_field :location, placeholder: "Enter location", class: "form-control", autofocus: true %>
+              <button class="btn btn-primary" type="submit">Get Forecast</button>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

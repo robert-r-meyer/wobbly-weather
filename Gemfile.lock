@@ -85,6 +85,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.18.6)
       msgpack (~> 1.2)
+    bootstrap (5.3.5)
+      popper_js (>= 2.11.8, < 3)
     brakeman (7.0.2)
       racc
     builder (3.3.0)
@@ -111,6 +113,9 @@ GEM
     connection_pool (2.5.3)
     crass (1.0.6)
     csv (3.3.4)
+    dartsass-rails (0.5.1)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -174,6 +179,27 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (4.31.0)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.31.0-aarch64-linux-gnu)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.31.0-aarch64-linux-musl)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.31.0-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.31.0-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.31.0-x86_64-linux-gnu)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.31.0-x86_64-linux-musl)
+      bigdecimal
+      rake (>= 13)
     httparty (0.23.1)
       csv
       mini_mime (>= 1.0.0)
@@ -266,6 +292,7 @@ GEM
     parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
+    popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -388,6 +415,22 @@ GEM
       racc (~> 1.5)
       sexp_processor (~> 4.16)
     rubyzip (2.4.1)
+    sass-embedded (1.89.0-aarch64-linux-gnu)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-aarch64-linux-musl)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-arm-linux-gnueabihf)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-arm-linux-musleabihf)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-arm64-darwin)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-x86_64-darwin)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-x86_64-linux-musl)
+      google-protobuf (~> 4.31)
     securerandom (0.4.1)
     selenium-webdriver (4.32.0)
       base64 (~> 0.2)
@@ -482,10 +525,12 @@ PLATFORMS
 DEPENDENCIES
   amazing_print (~> 1.6)
   bootsnap
+  bootstrap (~> 5.3)
   brakeman
   bullet (~> 8.0)
   bundle-audit (~> 0.1.0)
   capybara
+  dartsass-rails (~> 0.5.1)
   debug
   factory_bot_rails
   faker

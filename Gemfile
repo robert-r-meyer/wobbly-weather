@@ -78,3 +78,6 @@ group :test do
 end
 
 gem "httparty", "~> 0.23.1"
+
+gem "dartsass-rails", "~> 0.5.1"
+gem "bootstrap", "~> 5.3"

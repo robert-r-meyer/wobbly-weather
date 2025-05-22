@@ -11,11 +11,12 @@ class WeatherForcastingController < ApplicationController
       api_key = ENV["WEATHER_API_KEY"]
       api = WeatherFetcher.new(api_key)
 
+
+      # Determine if the location is cached before calling the API
+      @cached_location = api.location_cached?(location)
+
       # Fetch weather data for the given location
       city_forcast = api.weather_by_location(location)
-
-      # Determine if the location is cached
-      @cached_location = api.location_cached?(location)
 
       # Handle error if the API call fails
       @forecast = city_forcast unless city_forcast["error"]

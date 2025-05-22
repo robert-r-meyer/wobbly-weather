@@ -17,7 +17,9 @@ class WeatherFetcher
   def location_cached?(city)
     # Check if the cache exists for a given city
     # City name only
-    cached = Rails.cache.exist?("weather_location/#{city}")
+    city = city.split(",")[0]
+
+    cached = Rails.cache.read("weather_location/#{city}").present?
     Rails.logger.info("Cache for #{city} exists: #{cached}")
 
     cached

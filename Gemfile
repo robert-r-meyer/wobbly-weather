@@ -70,7 +70,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "amazing_print", "~> 1.6"
+  gem "amazing_print", "~> 1.8"
   gem "listen", "~> 3.3"
   gem "overcommit", "~> 0.67.1"
   gem "web-console"

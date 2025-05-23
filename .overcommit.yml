@@ -52,4 +52,4 @@ PrePush:
 
   RunTests:
     enabled: true
-    command: ['bin/rails', 'test']
+    command: ['bin/rails', 'db:test:prepare', 'test', 'test:system', 'spec']

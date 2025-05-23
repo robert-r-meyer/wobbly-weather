@@ -5,9 +5,15 @@ RSpec.describe WeatherFetcher do
   let(:city) { "London" }
   let(:fetcher) { WeatherFetcher.new(api_key) }
 
+
   describe "#location_cached?" do
+    before(:each) do
+      # Ensure the cache is cleared before each test
+      Rails.cache.clear
+    end
+
     it "returns true if cache exists for the city" do
-      Rails.cache.write("weather_location/#{city}", { temp: 10 })
+      Rails.cache.write("weather_location/#{city}", expires_in: 30.seconds)
       expect(fetcher.location_cached?(city)).to be true
     end
 
@@ -17,14 +23,15 @@ RSpec.describe WeatherFetcher do
     end
 
     it "uses only the city name part if city includes a country" do
-      Rails.cache.write("weather_location/#{city}", { temp: 10 })
+      Rails.cache.write("weather_location/#{city}", expires_in: 30.seconds)
       expect(fetcher.location_cached?("#{city},GB")).to be true
     end
   end
 
   describe "#weather_by_location" do
     before do
-      Rails.cache.delete("weather_location/#{city}")
+      # ensure the cache is cleared before each test
+      Rails.cache.clear
     end
 
     it "fetches weather data from API and caches it if not cached" do
@@ -35,6 +42,7 @@ RSpec.describe WeatherFetcher do
       expect(result["main"]["temp"]).to eq(15)
       expect(Rails.cache.read("weather_location/#{city}")).to eq({ "main" => { "temp" => 15 } })
     end
+
     it "returns cached data if present and does not call the API" do
       Rails.cache.write("weather_location/#{city}", { "main" => { "temp" => 22 } })
       expect(WeatherFetcher).not_to receive(:get)

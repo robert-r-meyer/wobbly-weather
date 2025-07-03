@@ -62,7 +62,7 @@ group :development, :test do
 
   gem "bullet", "~> 8.0"
 
-  gem "sorbet", "~> 0.5.12119"
+  gem "sorbet", "~> 0.5.12219"
   gem "reek", "~> 6.5"
   gem "fasterer", "~> 0.11.0"
   gem "bundle-audit", "~> 0.1.0"

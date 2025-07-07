@@ -168,8 +168,6 @@ GEM
       ruby_parser (>= 3.19.1)
     ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-aarch64-linux-musl)
-    ffi (1.17.2-arm-linux-gnu)
-    ffi (1.17.2-arm-linux-musl)
     ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
@@ -179,9 +177,6 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (4.31.0)
-      bigdecimal
-      rake (>= 13)
     google-protobuf (4.31.0-aarch64-linux-gnu)
       bigdecimal
       rake (>= 13)
@@ -270,10 +265,6 @@ GEM
     nokogiri (1.18.8-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.8-aarch64-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.8-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.8-arm-linux-musl)
       racc (~> 1.4)
     nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
@@ -423,10 +414,6 @@ GEM
       google-protobuf (~> 4.31)
     sass-embedded (1.89.0-aarch64-linux-musl)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.0-arm-linux-gnueabihf)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.89.0-arm-linux-musleabihf)
-      google-protobuf (~> 4.31)
     sass-embedded (1.89.0-arm64-darwin)
       google-protobuf (~> 4.31)
     sass-embedded (1.89.0-x86_64-darwin)
@@ -464,14 +451,12 @@ GEM
     sorbet-static (0.5.12119-aarch64-linux)
     sorbet-static (0.5.12119-universal-darwin)
     sorbet-static (0.5.12119-x86_64-linux)
-    sqlite3 (2.6.0-aarch64-linux-gnu)
-    sqlite3 (2.6.0-aarch64-linux-musl)
-    sqlite3 (2.6.0-arm-linux-gnu)
-    sqlite3 (2.6.0-arm-linux-musl)
-    sqlite3 (2.6.0-arm64-darwin)
-    sqlite3 (2.6.0-x86_64-darwin)
-    sqlite3 (2.6.0-x86_64-linux-gnu)
-    sqlite3 (2.6.0-x86_64-linux-musl)
+    sqlite3 (2.7.2-aarch64-linux-gnu)
+    sqlite3 (2.7.2-aarch64-linux-musl)
+    sqlite3 (2.7.2-arm64-darwin)
+    sqlite3 (2.7.2-x86_64-darwin)
+    sqlite3 (2.7.2-x86_64-linux-gnu)
+    sqlite3 (2.7.2-x86_64-linux-musl)
     sshkit (1.24.0)
       base64
       logger
@@ -520,8 +505,6 @@ PLATFORMS
   aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux-gnu
-  arm-linux-musl
   arm64-darwin
   x86_64-darwin
   x86_64-linux

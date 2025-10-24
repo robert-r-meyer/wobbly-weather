@@ -60,7 +60,7 @@ group :development, :test do
   # VCR For recording HTTP interactions
   gem "vcr", "~> 6.3"
 
-  gem "bullet", "~> 8.0"
+  gem "bullet", "~> 8.1"
 
   gem "sorbet", "~> 0.5.12119"
   gem "reek", "~> 6.5"
